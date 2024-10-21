@@ -1,0 +1,319 @@
+/* Общие стили для всего приложения */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f8ff; /* Светло-голубой фон */
+    color: #001f3f; /* Тёмно-синий цвет текста */
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+h2 {
+    color: #001f3f;
+    margin: 20px 0;
+}
+
+/* Шапка */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f8ff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.header-left h1 {
+    font-size: 24px;
+    color: #001f3f;
+}
+
+.header-right {
+    display: flex;
+    gap: 20px;
+}
+
+.header-right button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header-right button:hover {
+    background-color: #0056b3;
+}
+
+/* Кнопка выхода */
+button.logout {
+    background-color: #ff4136;
+}
+
+button.logout:hover {
+    background-color: #c0392b;
+}
+
+/* Общие стили для кнопок */
+button {
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Инпуты */
+input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Страница авторизации */
+.auth-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container button {
+    margin-top: 10px;
+}
+
+/* Главная страница */
+.books-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 80px 20px; /* Учтена шапка */
+}
+
+/* Заголовок книги */
+.book-card h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #001f3f;
+}
+
+.book-card {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    text-align: center;
+    border: 1px solid #007bff;
+    color: #001f3f;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-cover {
+    width: 150px; /* Фиксированная ширина обложки */
+    height: 200px; /* Фиксированная высота обложки */
+    object-fit: cover; /* Картинка обрезается, если она больше заданного размера */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.book-info {
+    white-space: nowrap; /* Одна строка */
+    overflow: hidden; /* Обрезать текст, если не помещается */
+    text-overflow: ellipsis; /* Добавлять многоточие */
+    margin: 5px 0;
+}
+
+/* Пагинация */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    margin: 0 10px;
+}
+
+.pagination span {
+    margin: 0 10px;
+    color: #001f3f;
+}
+
+/* Окно чтения */
+.book-content {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+    color: #001f3f;
+    white-space: pre-line;
+}
+
+/* Уведомления (ошибка или успех) */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notification.error {
+    background-color: #ff4136;
+}
+
+.notification.success {
+    background-color: #2ecc40;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .auth-container {
+        width: 90%;
+    }
+
+    .books-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-card {
+        width: 90%;
+    }
+}
+
+/* Стили для рейтинга звёзд */
+.star-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.star-rating label {
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.star-rating .star {
+    color: #ccc; /* Цвет звёзд по умолчанию */
+    transition: color 0.2s ease;
+}
+
+.star-rating .star.filled {
+    color: #ffd700; /* Золотой цвет для активных звёзд */
+}
+
+.star-rating input {
+    display: none;
+}
+
+.book-description {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #001f3f;
+}
+
+
+.book-authors, .book-genres, .book-rating {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+
+.rating-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Центрирование содержимого на странице */
+.reader-page-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px; /* Добавляем комфортные отступы */
+    background-color: #f0f8ff; /* Светло-голубой фон */
+    min-height: 100vh; /* Страница занимает всю высоту экрана */
+}
+
+/* Карточка читалки */
+.book-reader {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Ограничиваем ширину текста для удобства чтения */
+    width: 100%; /* Ширина карточки читалки */
+    line-height: 1.8; /* Линии текста располагаются комфортно */
+    font-size: 18px; /* Комфортный размер шрифта для чтения */
+    font-family: 'Georgia', serif; /* Шрифт, подходящий для чтения больших текстов */
+    color: #001f3f;
+}
+
+/* Заголовок книги */
+.book-reader h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #001f3f;
+}
+
+/* Рекомендуемые книги */
+.recommended-books {
+    margin-bottom: 40px;
+}
+
+.scrollable-books {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.scrollable-books::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scrollable-books::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 10px;
+}
