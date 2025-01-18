@@ -58,7 +58,7 @@ const ReaderPage = () => {
 
                 {/* Компонент для оценки книги */}
                 <div className="rating-section">
-                    <h3>Оценить книгу:</h3>
+                    <h3>Оценить товар:</h3>
                     <StarRating bookId={bookId!} bookRating={rating!}/>
                 </div>
             </div>

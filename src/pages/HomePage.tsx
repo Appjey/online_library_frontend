@@ -85,7 +85,7 @@ const HomePage = () => {
     return (
         <div>
             {/* Рекомендуемые книги */}
-            <h2>Рекомендуемые книги</h2>
+            <h2>Рекомендуемые товары</h2>
             <div className="recommended-books">
                 {recommendedBooks.length > 0 ? (
                     <div className="scrollable-books">
@@ -106,7 +106,7 @@ const HomePage = () => {
             </div>
 
             {/* Список всех книг */}
-            <h2>Все книги</h2>
+            <h2>Все товары</h2>
             <div className="books-grid">
                 {currentBooks.length > 0 ? (
                     currentBooks.map((item) => (

@@ -41,7 +41,7 @@ const StarRating = ({ bookId, bookRating }: StarRatingProps) => {
 
     return (
         <div className="star-rating">
-            {[...Array(5)].map((star, index) => {
+            {[...Array(5)].map((_star, index) => {
                 const ratingValue = index + 1;
                 return (
                     <label key={index}>
